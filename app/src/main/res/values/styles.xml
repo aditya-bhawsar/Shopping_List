@@ -1,0 +1,25 @@
+<resources>
+
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+
+        <item name="colorPrimary">@color/iconBucketBg</item>
+        <item name="colorPrimaryDark">@color/iconBucketDarkBg</item>
+        <item name="colorAccent">@color/iconBucketHandleBg</item>
+        <item name="textInputStyle">@style/MyTextStyle</item>
+    </style>
+
+    <style name="AppTheme.Launcher" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="MyTextStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/iconBucketDarkBg</item>
+        <item name="boxBackgroundColor">#ffffff</item>
+    </style>
+
+
+
+</resources>

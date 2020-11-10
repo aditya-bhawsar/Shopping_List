@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Info"
+        android:icon="@drawable/ic_info"
+        android:enabled="true"
+        android:visible="true"
+        android:id="@+id/info_menu"
+        app:showAsAction="always"/>
+
+    <item android:title="Rate"
+        android:icon="@drawable/ic_star"
+        android:enabled="true"
+        android:visible="true"
+        android:id="@+id/rate_menu"
+        app:showAsAction="always"
+        />
+
+    <item android:title="Search"
+        android:icon="@drawable/ic_search"
+        android:enabled="true"
+        android:orderInCategory="100"
+        android:visible="true"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        android:id="@+id/search_menu"
+        app:showAsAction="always"
+        />
+
+</menu>
