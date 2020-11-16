@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
@@ -28,7 +29,7 @@ class AppActivity : AppCompatActivity(), ItemAdapter.ItemListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Thread.sleep(7050)
+        Thread.sleep(750)
         setTheme(R.style.AppTheme)
         setContentView(R.layout.activity_main)
 
@@ -38,12 +39,12 @@ class AppActivity : AppCompatActivity(), ItemAdapter.ItemListener {
 
         adapter = ItemAdapter(this,this)
         list_rv.adapter = adapter
-        list_rv.layoutManager = LinearLayoutManager(this)
 
         itemViewModel = ViewModelProvider(this).get(ItemViewModel::class.java)
-        itemViewModel.allItems.observe(this , Observer { items -> items.let { adapter.setItems(it) } })
 
-        val addBtn = findViewById<FloatingActionButton>(R.id.add_btn)
+        itemViewModel.listedItems.observe(this , Observer { items -> items?.let { adapter.setItems(it) } })
+
+        val addBtn = findViewById<ExtendedFloatingActionButton>(R.id.add_btn)
 
         addBtn.setOnClickListener {
             val view:View = LayoutInflater.from(this).inflate(R.layout.item_details,null)
@@ -65,7 +66,7 @@ class AppActivity : AppCompatActivity(), ItemAdapter.ItemListener {
                     val newItem = Item(0,nameEt.text.toString(),amountEt.text.toString())
                     itemViewModel.insert(newItem)
                 }
-                .setPositiveButtonIcon(resources.getDrawable(R.drawable.ic_add_dialog,this.theme))
+                //.setPositiveButtonIcon(resources.getDrawable(R.drawable.ic_add_dialog,this.theme))
                 .show()
         }
     }
@@ -125,9 +126,9 @@ class AppActivity : AppCompatActivity(), ItemAdapter.ItemListener {
                 val newItem = Item(item.id,nameEt.text.toString(),amountEt.text.toString())
                 itemViewModel.update(newItem)
             }
-            .setPositiveButtonIcon(resources.getDrawable(R.drawable.ic_save , this.theme))
+            //.setPositiveButtonIcon(resources.getDrawable(R.drawable.ic_save , this.theme))
             .setNegativeButton("Delete"){_,_-> itemViewModel.delete(item) }
-            .setNegativeButtonIcon(resources.getDrawable(R.drawable.ic_delete , this.theme))
+            //.setNegativeButtonIcon(resources.getDrawable(R.drawable.ic_delete , this.theme))
             .setNeutralButton("Cancel"){_,_-> }
             .show()
     }

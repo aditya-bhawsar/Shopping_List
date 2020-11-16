@@ -10,18 +10,19 @@
         android:layout_width="match_parent"
         android:layout_margin="7dp"
         android:id="@+id/list_rv"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_height="match_parent"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="10dp"
-        app:fabSize="normal"
+        android:layout_margin="12dp"
+        app:fabSize="mini"
         android:id="@+id/add_btn"
-        app:tint="@android:color/white"
-        app:srcCompat="@drawable/ic_add"
+        app:iconTint="@android:color/white"
+        app:icon="@drawable/ic_add"
         android:backgroundTint="@color/iconBucketBg"
         />
 

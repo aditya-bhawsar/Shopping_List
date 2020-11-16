@@ -2,6 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     app:cardBackgroundColor="@color/iconListBg"
     app:cardCornerRadius="10dp"
     android:layout_margin="5dp"
@@ -14,9 +15,9 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
-            android:textSize="23sp"
+            android:textSize="16sp"
             android:layout_margin="10dp"
-            android:text="Item NAME"
+            tools:text="Item NAME"
             android:textColor="@color/iconBucketHandleBg"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
@@ -30,19 +31,19 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_width="30dp"
+            android:layout_width="20dp"
             android:tint="@color/iconBucketHandleBg"
             android:id="@+id/edit_img"
             android:src="@drawable/ic_edit"
-            android:layout_height="30dp"/>
+            android:layout_height="20dp"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
             android:id="@+id/amount_tv"
-            android:text="5 Packs"
-            android:textSize="18sp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
+            tools:text="5 Packs"
+            android:textSize="12sp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name_tv"
