@@ -31,19 +31,6 @@ class ItemViewModel(application: Application) : AndroidViewModel(application) {
         listedItems.removeSource(toRemoveSource)
     }
 
-    /*private var allItems : MutableLiveData<List<Item>> = MutableLiveData()
-    val _allItems: LiveData<List<Item>>
-        get() = allItems
-
-    fun queryIt(text:String){ allItems = if(text!="") itemRepository.search(text) else itemRepository.allItems }
-
-    fun queryIt(text:String)= viewModelScope.launch{
-        if(text!="")
-            allItems.postValue(itemRepository.search(text).value)
-        else
-            allItems.postValue(itemRepository.allItems.value)
-    }*/
-
     fun insert(item: Item) = viewModelScope.launch(Dispatchers.IO) { itemRepository.insert(item) }
     fun delete(item: Item) = viewModelScope.launch(Dispatchers.IO) { itemRepository.delete(item) }
     fun update(item: Item) = viewModelScope.launch(Dispatchers.IO) { itemRepository.update(item) }
